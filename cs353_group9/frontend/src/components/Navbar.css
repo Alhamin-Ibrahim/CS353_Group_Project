@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.nav {
+    background-color: #234343;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    height: 80px;
+    padding: 0 1rem 0 75px;
+}
+
+.nav:has(.site-name) {
+    justify-content: space-between;
+}
+
+.nav:not(:has(.site-name)) {
+    justify-content: flex-end;
+    padding: 0 1rem;
+}
+
+.site-logo {
+    height: 55px;
+    position: relative;
+    top: 10px;
+}
+
+.nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    height: 100%;
+    align-items: center;
+}
+
+.nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav a.nav-link {
+    color: #C0AAE2 ;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.25s ease;
+    font-size: 16px;
+    padding: 0.35rem 0.75rem;
+
+}
+
+.nav a.nav-link:hover {
+    background-color: #2F5E5E;
+    color: white;
+}
+
+.nav a.nav-link.active {
+    color: white;
+    background-color: #2F5E5E;
+    font-weight: 600;
+    transform: scale(1.05); 
+}
+
+.nav a.nav-link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: white;
+    transition: width 0.25s ease;
+    width: 0%;
+    margin-top: 4px;
+}
+
+.nav a.nav-link.active::after {
+    width: 100%;
+}

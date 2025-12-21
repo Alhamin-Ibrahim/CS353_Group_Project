@@ -1,0 +1,533 @@
+/* === Chat Page Wrapper === */
+.chat-page {
+  min-height: 100vh;
+  background-color: #B0BCBF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+}
+
+/* === Chat Window Container === */
+.chat-window {
+  max-width: 1000px;
+  width: 95%;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #88A699;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #2D4343;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Chat Header === */
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.chat-header .back-button {
+  position: absolute;
+  left: 0;
+  background-color: #2D4343;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.chat-header .back-button:hover {
+  background-color: #88A699;
+}
+
+.profile-pic {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2D4343;
+}
+
+.chat-header strong {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #2D4343;
+  text-align: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* === Messages List === */
+.chat-messages {
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  height: 600px;
+  overflow-y: auto;
+  background-color: #f0fdf4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.message-row {
+  display: flex;
+  max-width: 100%;
+}
+
+.message-row.sent { justify-content: flex-end; }
+.message-row.received { justify-content: flex-start; }
+
+.message-bubble {
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  max-width: 75%;
+  font-size: 0.95rem;
+  line-height: 1.3rem;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.message-bubble.sent {
+  background: linear-gradient(135deg, #99B39A, #88A699);
+  color: white;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.message-bubble.received {
+  background-color: #B0BCBF;
+  color: #2D4343;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.message-time {
+  font-size: 0.65rem;
+  color: #2D4343;
+  margin-top: 0.25rem;
+  text-align: right;
+}
+
+/* === Input Container === */
+.chat-input-container {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.chat-input-container input {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  border: 1px solid #6F8B8F;
+  font-size: 1rem;
+  outline: none;
+}
+
+.chat-input-container input:focus {
+  border-color: #88A699;
+  box-shadow: 0 0 0 2px rgba(136,166,153,0.2);
+}
+
+.chat-input-container .upload-button {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  background-color: #99B39A;
+  color: #2D4343;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-input-container .upload-button:hover { background-color: #88A699; }
+
+/*view listing modal button*/
+/*.view-listing-btn {
+  background-color: #88A699;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+  margin-top: 8px;
+}*/
+
+/*view listing modal button*/
+/*.view-listing-btn:hover {
+  background-color: #6c8c7f;
+}*/
+
+/* === Card Messages === */
+.card-message {
+  display: flex;
+  gap: 0.75rem;
+  border-radius: 1.25rem;
+  background-color: #B0BCBF;
+  padding: 0.75rem;
+}
+
+.card-image {
+  width: 120px;
+  height: 100px;
+  background-color: #e0f2f1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-image .no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2D4343;
+  font-size: 0.8rem;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title { font-weight: 600; color: #2D4343; }
+.card-price, .card-offer { color: #2D4343; margin-top: 0.25rem; font-weight: 500; }
+.card-link a { color: #2D4343; text-decoration: none; font-weight: 500; }
+
+.card-actions {
+  margin-top: 0.5rem;
+}
+
+.card-actions button {
+  background-color: #2D4343;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.card-actions button:hover { background-color: #99B39A; }
+
+.card-accepted { margin-top: 0.5rem; font-weight: 600; color: #059669; }
+
+/* === Modals === */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #ffffff;
+  color: #2D4343;
+  border-radius: 12px;
+  padding: 20px;
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-content h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #B0BCBF;
+  border-radius: 6px;
+  outline: none;
+}
+
+.modal-content button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #2D4343;
+  color: #ffffff;
+  transition: background 0.2s;
+}
+
+.modal-content button:hover { background: #3B5555; }
+
+.accept-modal .modal-content { width: 600px; }
+
+/* === Send Listing Modal: Large & Carousel === */
+.modal-content.send-listing {
+  width: 950px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 40px;
+  background: linear-gradient(145deg, #f8f9fa, #e6f0ef);
+  border-radius: 20px;
+  box-shadow: 0 14px 50px rgba(0,0,0,0.3);
+}
+
+/* === Horizontal Carousel === */
+.modal-list {
+  flex: 1.3;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 16px;
+  padding-bottom: 9px;
+  scroll-behavior: smooth;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 20px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #e0f2f1;
+  border-radius: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #88A699;
+  border-radius: 999px;
+  border: 2px solid #e0f2f1;
+  background-clip: padding-box;
+}
+
+/* Carousel items */
+.modal-list-item {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  padding-bottom: 7.9px;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #B0BCBF;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: all 0.2s;
+}
+
+.modal-list-item:hover {
+  background-color: #e0f2f1;
+  transform: translateY(-3px);
+}
+
+.modal-list-item.selected {
+  border: 2px solid #88A699;
+  box-shadow: 0 0 16px rgba(136,166,153,0.6);
+}
+
+.modal-list-item-image img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 15px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #88A699;
+  border-radius: 999px;
+  border: 2px solid #f0f0f0;
+  background-clip: padding-box;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: #6f8b8f;
+}
+
+
+/* === Right: Selected Item Box === */
+.modal-selected {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-selected-box {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.25);
+}
+
+.modal-selected-image img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/*.modal-selected-title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  text-align: center;
+}*/
+
+.modal-selected-price {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #2D4343;
+}
+
+.modal-selected-description {
+  font-size: 1rem;
+  color: #2D4343;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* === Form inside modal === */
+.modal-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-form input {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #B0BCBF;
+  font-size: 1rem;
+  outline: none;
+}
+
+.modal-form input:focus {
+  border-color: #88A699;
+  box-shadow: 0 0 0 3px rgba(136,166,153,0.2);
+}
+
+/* === Modal Buttons === */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.modal-buttons .btn,
+.modal-buttons .upload-button {
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  padding: 0 20px !important;
+  border-radius: 16px !important;
+  color: white !important;
+  font-weight: 600;
+  font-size: 1rem !important;
+  border: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+  text-align: center;
+  white-space: nowrap;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: linear-gradient(135deg, #88A699, #6F8B8F) !important;
+  box-shadow: 0 4px 15px rgba(136, 166, 153, 0.3) !important;
+}
+
+.modal-buttons .btn:hover,
+.modal-buttons .upload-button:hover {
+  background: linear-gradient(135deg, #b2a1d1, #8b7fb8) !important;
+  box-shadow: 0 6px 20px rgba(178, 161, 209, 0.5) !important;
+  transform: translateY(-2px) !important;
+}
+.modal-selected-box,
+.modal-list-item {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.modal-selected-title,
+.modal-selected-description,
+.item-title,
+.item-price {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+.modal-selected-title,
+.modal-selected-description {
+  max-width: 100%;
+}
+
+.modal-selected-box {
+  padding: 20px; /* smaller padding */
+}
+
+.modal-selected-description {
+  max-height: 100px; /* smaller box */
+  overflow-y: auto;  /* enables scrolling */
+  font-size: 0.95rem;
+  line-height: 1.2rem;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+
+

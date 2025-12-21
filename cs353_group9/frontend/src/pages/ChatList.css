@@ -1,0 +1,101 @@
+.chat-list-page {
+  background-color: #B0BCBF; 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.chat-list-container {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.chat-list-header {
+  background-color: #88A699;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 16px;
+  text-align: center;
+}
+
+/* Conversation area */
+.convo-area {
+  background-color: #ffffff; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* No conversations text */
+.no-convos {
+  text-align: center;
+  color: #2D4343;
+  padding: 40px 20px;
+  font-size: 16px;
+}
+
+/* Conversation list */
+.convo-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Conversation card */
+.convo-card {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #B0BCBF;
+  transition: background 0.2s;
+  background-color: transparent;
+}
+
+.convo-card:hover {
+  background-color: #f0f0f0;
+}
+
+/* Avatar */
+.convo-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 14px;
+  flex-shrink: 0;
+  border: 1px solid #B0BCBF;
+}
+
+/* Conversation info */
+.convo-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.convo-name {
+  font-weight: 600;
+  color: #2D4343;
+  font-size: 17px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.convo-last-message {
+  font-size: 15px;
+  color: #6F8B8F;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
