@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { auth, db, storage } from '../firebase';
-import './Upload.css';
+import './upload.css';
 
 const DESCRIPTION_LIMIT = 300;
 
