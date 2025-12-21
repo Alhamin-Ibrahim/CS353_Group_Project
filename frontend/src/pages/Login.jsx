@@ -4,7 +4,7 @@ import { AuthContext } from '../contexts/contexts';
 import GoogleAuth from '../components/GoogleAuth';
 import logo from '../sellify4.png';
 
-import './Login.css';
+import './login.css';
 
 function Login() {
   const navigate = useNavigate();
